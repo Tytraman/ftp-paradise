@@ -1,0 +1,16 @@
+[package]
+name = "ftp-paradise"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.38"
+
+# Spécifie les dépendances propres aux plateformes 'Linux'.
+[target.'cfg(target_os = "linux")'.dependencies]
+signal-hook = "0.3.17"
+libc = "0.2.155"
+
+# Spécifie les dépendances propres aux plateformes 'Windows'.
+[target.'cfg(windows)'.dependencies]
+winapi = "0.3.9"
